@@ -17,7 +17,6 @@
 SetTitleMatchMode 2
 SendMode Input
 
-
 ; --------------------------------------------------------------
 ; media/function keys all mapped to the right option key
 ; --------------------------------------------------------------
@@ -57,7 +56,6 @@ LWin & s::Send ^{s}
 
 ; Selecting
 LWin & a::Send ^a
-
 ; Copying
 LWin & c::Send ^c
 
@@ -99,8 +97,8 @@ LWin & m::WinMinimize,a
 LAlt & SC01B::Send ^{+}
 LAlt & -::Send ^{-}
 
-^e::Send {End}
-^a::Send {Home}
+;^e::Send {End}
+;^a::Send {Home}
 
 LWin & LButton::
    Send {Ctrl Down}{Click}{Ctrl Up}
@@ -162,10 +160,14 @@ LAlt & g::SendInput {©}
 LAlt & o::SendInput {ø}
 
 ; Map Alt + 5 to [
-LAlt & 5::SendInput {[}
+RAlt & 5::SendInput {[}
+LAlt & 5::SendInput {{} 
 
 ; Map Alt + 6 to ]
-LAlt & 6::SendInput {]}
+RAlt & 6::SendInput {]}
+LAlt & 6::SendInput {}}
+RAlt & )::SendInput {]}
+LAlt & )::SendInput {}}   
 
 ; Map Alt + E to €
 LAlt & e::SendInput {€}
@@ -240,7 +242,7 @@ vkDE::SendInput {@}
 +vkDE::SendInput {#}
 
 ; Cmd+Backspace to delete files
-LWin & Backspace::Send Del
+LWin & Backspace::Send {Delete}
 
 ; --------------------------------------------------------------
 ; Application specific
