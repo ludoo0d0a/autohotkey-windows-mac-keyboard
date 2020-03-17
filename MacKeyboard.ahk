@@ -171,7 +171,7 @@ LAlt & 6::SendInput {]}
 LAlt & e::SendInput {€}
 
 ; Map Alt + - to –
-LAlt & -::SendInput {–}
+;LAlt & -::SendInput {–}
 
 ; Map Alt + 8 to {
 LAlt & 8::SendInput {{}
@@ -234,6 +234,10 @@ LWin & Space::Send #s
 ; Do not open start menu on Windows key or go to menu
 ;#~LAlt Up::Send {Blind}{vk07}
 ;#~LWin Up:: return
+
+; Swap upper left key : ²³ and @#
+vkDE::SendInput {@}
++vkDE::SendInput {#}
 
 ; --------------------------------------------------------------
 ; Application specific
