@@ -239,6 +239,9 @@ LWin & Space::Send #s
 vkDE::SendInput {@}
 +vkDE::SendInput {#}
 
+; Cmd+Backspace to delete files
+LWin & Backspace::Send Del
+
 ; --------------------------------------------------------------
 ; Application specific
 ; --------------------------------------------------------------
@@ -253,4 +256,5 @@ vkDE::SendInput {@}
 #!u::Send ^u
 
 #IfWinActive
+
 
