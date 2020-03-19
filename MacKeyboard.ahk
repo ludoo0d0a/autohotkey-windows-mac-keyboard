@@ -5,7 +5,7 @@
 ; --------------------------------------------------------------
 ; NOTES
 ; --------------------------------------------------------------
-; ! = ALT
+; ! = ALT  
 ; ^ = CTRL
 ; + = SHIFT
 ; # = WIN
@@ -100,9 +100,13 @@ LAlt & -::Send ^{-}
 ;^e::Send {End}
 ;^a::Send {Home}
 
-LWin & LButton::
-   Send {Ctrl Down}{Click}{Ctrl Up}
-return
+;LWin & LButton::Send {Ctrl Down}{Click}{Ctrl Up}
+LWin & LButton::Send ^{Click}
+
+; REMAPS CTRL-LEFT-CLICK TO CMD AND REPLICATES OSX CTRL-CLICK RIGHT-CLICK
+;LWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+;RWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+;CTRL & LBUTTON::send {RButton}
 
 LWin & r::SendInput #r
 
@@ -110,6 +114,9 @@ LWin & r::SendInput #r
 ;Lwin & Tab::AltTab
 ;Lalt & Tab::Send !{Tab}
 ;Lwin & Tab::Send #{Tab}
+
+; SUPPORT FOR BROWSER BEHAVIOR
+#+n::^+n
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Cmd-Tab ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 $*Tab::
@@ -151,7 +158,7 @@ return
 ; --------------------------------------------------------------
 							
 ; Map Alt + L to @
-LAlt & l::SendInput {@}
+;LAlt & l::SendInput {@}
 
 ; Map Alt + N to ©
 LAlt & g::SendInput {©}
@@ -184,14 +191,18 @@ LAlt & 9::SendInput {}}
 ; Map Alt + R to ®
 ;LAlt & r::SendInput {®}
 
-; Map Alt + N to |
+; Map Alt + 7 to |
 LAlt & 7::SendInput {|}
+LAlt & l::SendInput {|}
+
+; Map Alt + Maj + L  ## dont work open language menu...
+!+l::SendInput {|}
 
 ; Map Alt + W to ∑
 LAlt & w::SendInput {∑}
 
 ; Map Alt + N to ~
-LAlt & n::SendInput {~}
+LAlt & n::SendInput {~}{Space}
 
 ; Map Alt + 3 to #
 LAlt & 3::SendInput {#}
@@ -243,6 +254,7 @@ vkDE::SendInput {@}
 
 ; Cmd+Backspace to delete files
 LWin & Backspace::Send {Delete}
+
 
 ; --------------------------------------------------------------
 ; Application specific
