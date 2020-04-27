@@ -5,13 +5,16 @@ This [AutoHotkey](http://www.autohotkey.com/) configuration file makes usual key
 
 LudoO remarks
 ------------
-For this fork, I test it with French belgium. 
-@# are not well managed. cmd+a cmd+s cmd+arrow.. are added by using this script.
+For this fork, I test it with French belgium.
+@# are not well managed.
+Cmd+a Cmd+s Cmd+arrow.. are added by using this script.
+Brackets :
+* {} are LeftAlt+()
+* [] are RightAlt+()
 
 Installation
 ------------
 
-- Install [AutoHotkey](http://www.autohotkey.com/)  (scoop install autohotkey)
-- Run the `MacKeyboard.ahk` file
-- Put the `MacKeyboard.ahk` file or a shortcut to the file in your Autostart folder to run it automatically on startup.
-
+* Install [AutoHotkey](http://www.autohotkey.com/)  (scoop install autohotkey)
+* Run the `MacKeyboard.ahk` file
+* Put the `MacKeyboard.ahk` file or a shortcut to the file in your Autostart folder to run it automatically on startup.
