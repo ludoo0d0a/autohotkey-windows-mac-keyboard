@@ -187,7 +187,7 @@ LAlt & 7::SendInput {|}
 LAlt & l::SendInput {|}
 
 ; Map Alt + Maj + L  ## dont work open language menu...
-!+l::SendInput {|}
+;!+l::SendInput {|}
 
 ; Map Alt + W to ∑
 LAlt & w::SendInput {∑}

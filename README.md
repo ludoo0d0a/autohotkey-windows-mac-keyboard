@@ -9,12 +9,15 @@ For this fork, I test it with French belgium.
 Cmd+a Cmd+s Cmd+arrow.. are added by using this script.
 Brackets :
 
-* {} are LeftAlt+()
-* [] are RightAlt+()
+* {} are LeftAlt + ()
+* [] are RightAlt + ()
+* | => LeftAlt + L
 
 ## Known issues
 
-Shift + Alt ) => open wi nsearch or language bar...
+Shift + Alt  are not well supported in general
+Shift + Alt + ) => open language bar and change to next language...
+Shift + Alt + ( => open win search...
 
 ## Classic Macos keyboard shortcuts
 
