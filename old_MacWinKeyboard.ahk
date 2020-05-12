@@ -17,7 +17,6 @@
 SetTitleMatchMode 2
 SendMode Input
 
-
 ; --------------------------------------------------------------
 ; media/function keys all mapped to the right option key
 ; --------------------------------------------------------------
@@ -101,7 +100,13 @@ LAlt & -::Send ^{-}
 ^e::Send {End}
 ^a::Send {Home}
 
-LAlt & LButton::Send {Ctrl Down}{Click}{Ctrl Up}
+;LAlt & LButton::Send {Ctrl Down}{Click}{Ctrl Up}
+LAlt & LButton::Send ^{Click}
+
+; REMAPS CTRL-LEFT-CLICK TO CMD AND REPLICATES OSX CTRL-CLICK RIGHT-CLICK
+;LWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+;RWIN & LBUTTON::send {ctrl down}{LButton}{ctrl up}
+;CTRL & LBUTTON::send {RButton}
 
 LWin & r::SendInput #r
 
@@ -141,19 +146,25 @@ return
 ; --------------------------------------------------------------
 
 ; Map Alt + L to @
-LWin & l::SendInput {@}
+LAlt & l::SendInput {@}
 
 ; Map Alt + N to ©
-LWin & g::SendInput {©}
+;LWin & g::SendInput {©}
+;LAlt & g::SendInput {©}
 
 ; Map Alt + o to ø
-LWin & o::SendInput {ø}
+;LWin & o::SendInput {ø}
+;LAlt & o::SendInput {ø}
 
 ; Map Alt + 5 to [
 LWin & 5::SendInput {[}
-
+LAlt & 5::SendInput {{}  
+	
 ; Map Alt + 6 to ]
 LWin & 6::SendInput {]}
+LAlt & 6::SendInput {}}
+RAlt & )::SendInput {]}
+LAlt & )::SendInput {}}  
 
 ; Map Alt + E to €
 LWin & e::SendInput {€}
@@ -222,6 +233,14 @@ LAlt & Space::Send #s
 ; Do not open start menu on Windows key or go to menu
 ;#~LAlt Up::Send {Blind}{vk07}
 ;#~LWin Up:: return
+
+; Swap upper left key : ²³ and @#
+vkDE::SendInput {@}
++vkDE::SendInput {#}
+
+; Cmd+Backspace to delete files
+LWin & Backspace::Send {Delete}
+
 
 ; --------------------------------------------------------------
 ; Application specific

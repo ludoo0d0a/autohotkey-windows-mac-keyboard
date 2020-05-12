@@ -1,19 +1,34 @@
-Use Mac keyboard with AutoHotkey under Windows
-==============================================
+# Use Mac keyboard with AutoHotkey under Windows
 
 This [AutoHotkey](http://www.autohotkey.com/) configuration file makes usual keyboard shortcuts work with an Apple keyboard on Windows. It has been testet with a german keyboard layout, but should work under different layouts as well.
 
-LudoO remarks
-------------
+## LudoO remarks
+
 For this fork, I test it with French belgium.
 @# are not well managed.
 Cmd+a Cmd+s Cmd+arrow.. are added by using this script.
 Brackets :
+
 * {} are LeftAlt+()
 * [] are RightAlt+()
 
-Installation
-------------
+## Known issues
+
+Shift + Alt ) => open wi nsearch or language bar...
+
+## Classic Macos keyboard shortcuts
+
+[ => Shift + Alt + (
+] => Shift + Alt + )
+| => Alt + Maj + L
+} +> Alt + )
+{ => Alt + (
+\ => Shift + Alt + /
+~ => Alt + n
+€ => Alt + $
+Display hidden files in dialog => Cmd(⌘) + Shift + .
+
+## Installation
 
 * Install [AutoHotkey](http://www.autohotkey.com/)  (scoop install autohotkey)
 * Run the `MacKeyboard.ahk` file

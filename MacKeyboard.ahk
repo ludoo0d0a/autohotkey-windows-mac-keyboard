@@ -119,35 +119,26 @@ LWin & r::SendInput #r
 #+n::^+n
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Cmd-Tab ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-$*Tab::
-if (WinActive("ahk_class TaskSwitcherWnd") || WinActive("ahk_class MultitaskingViewFrame")) {
-    OutputDebug, "Tab in task switcher"
+$Tab::
+vAltTabTickCount := A_TickCount
+if WinActive("ahk_class TaskSwitcherWnd")
 	SendInput, {Tab}
-	return
-}
-if GetKeyState("LWin", "P") {
-    OutputDebug, "Tab with LWin"
-    if GetKeyState("LAlt", "P") {
-        Send, {LAlt Up}
-    }
-    Sleep 50
-    Send, {LAlt Down}{Tab}
-    Sleep 50
-    SetTimer, AltTabSendTab, 50
-} else {
-	OutputDebug, "Tab without LWin"
-}
+else if GetKeyState("LAlt", "P") {
+	SendInput, {Alt Down}{Tab}
+	SetTimer, AltTabSendTab, 50
+} else 
+    SendInput, {Tab}
 return
 
 AltTabSendTab:
-if !GetKeyState("LWin", "P") {
-    OutputDebug, "LWin up timer"
-    Send, {LAlt Up}{LWin Up}
-    SetTimer, AltTabSendTab, Off
-} else {
-    OutputDebug, "LWin still down timer"
-}
-return
+if GetKeyState("Tab", "P") 
+	vAltTabTickCount := A_TickCount
+if WinActive("ahk_class TaskSwitcherWnd")
+&& !(A_TickCount - vAltTabTickCount > 400)
+	return
+SendInput, {Alt Up}
+SetTimer, AltTabSendTab, Off
+return  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; switch keyboard layout
@@ -157,7 +148,7 @@ return
 ; OS X keyboard mappings for special chars
 ; --------------------------------------------------------------
 							
-; Map Alt + L to @
+; Map Alt + L to @@
 ;LAlt & l::SendInput {@}
 
 ; Map Alt + N to ©
