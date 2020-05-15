@@ -201,6 +201,10 @@ LAlt & 3::SendInput {#}
 #if getKeyState("LAlt")
 Shift & 6::Send {^}{Space}
 Shift & 7::SendInput {\}
+; Shift & {:}::SendInput {\}
+; select next language and open language bar...
+Shift & /::SendInput {\}
+
 #if
 
 ; --------------------------------------------------------------
